@@ -1,8 +1,8 @@
 #include "lists.h"
 
 /**
- * check_cycle - checks if singly linked list has
- * a cycle
+ * check_cycle - checks if a singly linked list has
+ * a cycle in it
  * @list: pointer to the list
  * Return: 0 if there is no cycle and 1 if there is
  */
@@ -13,8 +13,11 @@ int check_cycle(listint_t *list)
 
 	p2 = list;
 	prev = list;
-	for (; list && p2 && p2->next; list = list->next, p2 = p2->next->next)
+	while (list && p2 && p2->next)
 	{
+		list = list->next;
+		p2 = p2->next->next;
+
 		if (list == p2)
 		{
 			list = prev;
@@ -37,4 +40,3 @@ int check_cycle(listint_t *list)
 
 	return (0);
 }
-
