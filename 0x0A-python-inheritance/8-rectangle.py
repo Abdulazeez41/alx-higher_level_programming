@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-Geometry | Rectangle class
+Defines a class Rectangle that inherits from BaseGeometry.
 '''
 
 
@@ -11,6 +11,7 @@ class Rectangle(BaseGeometry):
     '''
         Implements a rectangle
     '''
+
     def __init__(self, width, height):
     '''
         Constructor to assign width and height at runtime
