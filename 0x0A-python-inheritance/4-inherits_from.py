@@ -4,7 +4,7 @@
 
 
 def inherits_from(obj, a_class):
-    '''the object is an instance of a class inherited (directly or indirectly) from a_class
+    '''the object is an instance of a class inherited
     obj: an object
     a_class: a class
     returns None
