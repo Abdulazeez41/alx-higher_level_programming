@@ -36,23 +36,33 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Set private attrb"""
-        self.setter_validation("width", value)
+        self.set_validity("width", value)
         self.__width = value
 
     @height.setter
     def height(self, value):
         """Set private attrb"""
-        self.setter_validation("height", value)
+        self.set_validity("height", value)
         self.__height = value
 
     @x.setter
     def x(self, value):
         """Set private attrb"""
-        self.setter_validation("x", value)
+        self.set_validity("x", value)
         self.__x = value
 
     @y.setter
     def y(self, value):
         """Set private attrb"""
-        self.setter_validation("y", value)
+        self.set_validity("y", value)
         self.__y = value
+
+    @staticmethod
+    def set_validity(attribute, value):
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(attribute))
+        if attribute == "x" or attribute == "y":
+            if value < 0:
+                raise ValueError("{} must be >= 0".format(attribute))
+        elif value <= 0:
+            raise ValueError("{} must be > 0".format(attribute))
